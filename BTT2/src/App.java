@@ -9,5 +9,7 @@ public class App {
         
         System.out.println("Toi ten: Nguyen Dinh Thang");
         System.out.println("MSSV: 23115141122119");
+         System.out.println("hoan thanh bai tap");
         scanner.close();
     }
+}
