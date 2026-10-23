@@ -8,7 +8,6 @@ public class App {
         String hoTen = scanner.nextLine(); 
         
         System.out.println("Toi ten: Nguyen Dinh Thang");
-        
+        System.out.println("MSSV: 23115141122119");
         scanner.close();
     }
-}
