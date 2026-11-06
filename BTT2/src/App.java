@@ -1,9 +1,11 @@
 import java.util.Scanner;
+import java.time.Year;
 
 public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        // --- BÀI TẬP TUẦN 3: Nhập thông tin sách ---
         System.out.println("--- NHAP THONG TIN SACH ---");
         System.out.print("Nhap ma sach: ");
         String maSach = scanner.nextLine();
@@ -31,7 +33,64 @@ public class App {
         System.out.println("Ma sach: " + maSach + " | Ten sach: " + tenSach);
         System.out.println("Thanh tien: " + thanhTien);
         System.out.println("Tong tien nhap: " + tongTienNhap);
+
+        // --- BÀI TẬP TUẦN 4: CÂU LỆNH ĐIỀU KIỆN ---
+        System.out.println("\n--- PHAN TICH THONG TIN SACH (TUAN 4) ---");
         
+        // Bài 1: Kiểm tra tính hợp lệ
+        int currentYear = Year.now().getValue();
+        if (donGia > 0 && soLuong >= 0 && namXuatBan > 0 && namXuatBan <= currentYear) {
+            System.out.println("Trang thai: Thong tin sach HOP LE.");
+        } else {
+            System.out.println("Trang thai: Thong tin sach KHONG hop le.");
+        }
+
+        // Bài 2: Phân loại giá
+        System.out.print("Phan loai gia: ");
+        if (donGia < 50000) {
+            System.out.println("Sach gia thap");
+        } else if (donGia >= 50000 && donGia <= 100000) {
+            System.out.println("Sach gia trung binh");
+        } else if (donGia > 100000 && donGia <= 200000) {
+            System.out.println("Sach gia cao");
+        } else {
+            System.out.println("Sach gia dac biet");
+        }
+
+        // Bài 3: Phân loại tồn kho
+        System.out.print("Phan loai ton kho: ");
+        if (soLuong == 0) {
+            System.out.println("Het sach");
+        } else if (soLuong >= 1 && soLuong <= 5) {
+            System.out.println("Sap het");
+        } else if (soLuong >= 6 && soLuong <= 20) {
+            System.out.println("Con it");
+        } else {
+            System.out.println("Con nhieu");
+        }
+
+        // Bài 4: Chọn loại sách bằng Switch-case
+        System.out.println("\nChon loai sach (1. Giao khoa | 2. Tham khao | 3. Chuyen nganh | 4. Khac): ");
+        int loaiSach = scanner.nextInt();
+        System.out.print("Ket qua chon: ");
+        switch (loaiSach) {
+            case 1:
+                System.out.println("Sach giao khoa");
+                break;
+            case 2:
+                System.out.println("Sach tham khao");
+                break;
+            case 3:
+                System.out.println("Sach chuyen nganh");
+                break;
+            case 4:
+                System.out.println("Sach khac");
+                break;
+            default:
+                System.out.println("Lua chon khong hop le");
+                break;
+        }
+
         scanner.close();
     }
 }
